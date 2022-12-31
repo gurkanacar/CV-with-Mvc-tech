@@ -1,0 +1,41 @@
+﻿@using CVmvc.Models.Entity;
+@model List<TBL_EDUCATION>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+
+<br />
+<h2>Egitim Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>HEAD</th>
+        <th>HEADBELOW</th>
+        <th>HEADBELOW2</th>
+        <th>GNO</th>
+        <th>DATE</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.HEADING</td>
+            <td>@item.HEADINGBELOW</td>
+            <td>@item.HEADINGBELOW2</td>
+            <td>@item.GNO</td>
+            <td>@item.DATE</td>
+            <td><a href='/Egitim/EgitimGetir/@item.ID' class="btn btn-danger">Delete</a></td>
+            <td><a href='/Egitim/EgitimGetir/@item.ID/' class="btn btn-warning">Update</a></td>
+        </tr>
+    }
+</table>
+<a href="/Egitim/EgitimEkle/" class="btn btn-primary">Yeni Egitim Bilgisi  Ekle</a>
+
+
+
+
+

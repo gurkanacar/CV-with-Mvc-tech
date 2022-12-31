@@ -1,0 +1,98 @@
+﻿@using CVmvc.Models.Entity;
+@model List<TBL_ABILITY>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+@{string renk = ""; }
+@{string labelrenk = ""; }
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Yetenek Listem</h3>
+                            </div>
+                            <div class="card-body">
+                                <a href='/Ability/NewAbility' class="btn btn-info">Yeni Yetenek Ekle</a>
+                                <br />
+                                <br />
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Yetenek</th>
+                                            <th>Derece</th>
+                                            <th style="width: 40px">Oran</th>
+                                            <th>Duzenle</th>
+                                            <th>Sil</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            if (item.ORAN >= 0 && item.ORAN <= 50)
+                                            {
+                                                renk = "progress-bar bg-danger";
+                                                labelrenk = "badge bg-danger";
+                                            }
+                                            if (item.ORAN >= 51 && item.ORAN <= 70)
+                                            {
+                                                renk = "progress-bar bg-warning";
+
+                                                labelrenk = "badge bg-warning";
+                                            }
+                                            if (item.ORAN >= 71 && item.ORAN <= 84)
+                                            {
+                                                renk = "progress-bar bg-primary";
+
+                                                labelrenk = "badge bg-primary";
+                                            }
+                                            if (item.ORAN >= 85 && item.ORAN <= 100)
+                                            {
+                                                renk = "progress-bar bg-success";
+
+                                                labelrenk = "badge bg-success";
+                                            }
+                                            <tr>
+                                                <td>@item.ID</td>
+                                                <td>@item.ABILITY</td>
+                                                <td>
+                                                    <div class="progress progress-xs">
+                                                        <div class="@renk" style="width: @item.ORAN%"></div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="@labelrenk">@item.ORAN%</span></td>
+                                                <td>
+                                                    <a class="btn btn-info btn-sm" href="/ABILITY/YetenekDuzenle/@item.ID">
+                                                        <i class="fas fa-pencil-alt">
+                                                        </i>
+                                                        Duzenle
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-danger btn-sm" href="/ABILITY/AbilityDelete/@item.ID">
+                                                        <i class="fas fa-trash">
+                                                        </i>
+                                                        Sil
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+</html>

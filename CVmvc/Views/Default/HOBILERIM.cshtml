@@ -1,0 +1,13 @@
+﻿@using CVmvc.Models.Entity
+@model List<TBL_HOBILERIM>
+
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Interests</h2>
+    @foreach (var x in Model)
+    {
+        <p>@x.EXPLANATION1</p>
+        <p class="mb-0">@x.EXPLANATION2</p>
+
+    }
+</div>

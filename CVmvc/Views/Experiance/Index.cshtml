@@ -1,0 +1,34 @@
+﻿@using CVmvc.Models.Entity
+@model List<TBL_EXPERIANCE>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h2>Deneyim Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>HEAD</th>
+        <th>HEAD2</th>
+        <th>DATE</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.HEAD</td>
+            <td>@item.HEADBELOW</td>
+            <td>@item.DATE</td>
+            <td><a href='/EDUCATION/egitimsil/@item.ID' class="btn btn-danger">Delete</a></td>
+            <td><a href='/Experiance/DeneyimGetir/@item.ID/' class="btn btn-warning">Update</a></td>
+        </tr>
+    }
+</table>
+<a href="/Experiance/DeneyimEkle/" class="btn btn-primary">Yeni Deneyim Ekle</a>
+

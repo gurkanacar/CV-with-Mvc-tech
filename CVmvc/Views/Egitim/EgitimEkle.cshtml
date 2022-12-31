@@ -1,0 +1,33 @@
+﻿@model CVmvc.Models.Entity.TBL_EDUCATION
+
+
+@{
+    ViewBag.Title = "EgitimEkle";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>New Egitim Ekleme Sayfasi</h2>
+
+<h4> Experiance UPDATE PAGE</h4>
+<br />
+
+<form method="post">
+    @Html.Label("Heading")
+    @Html.TextBoxFor(x => x.HEADING, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x=>x.HEADING," ", new {@style="color:red" })
+    <br />
+    @Html.Label("Heading Below1")
+    @Html.TextBoxFor(x => x.HEADINGBELOW, new { @class = "form-control" })
+    <br />
+    @Html.Label("Heading Below2")
+    @Html.TextBoxFor(x => x.HEADINGBELOW2, new { @class = "form-control" })
+    <br />
+    @Html.Label("GNO")
+    @Html.TextBoxFor(x => x.GNO, new { @class = "form-control" })
+    <br />
+    @Html.Label("DATE")
+    @Html.TextBoxFor(x => x.DATE, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">SAVE</button>
+</form>

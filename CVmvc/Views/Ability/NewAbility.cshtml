@@ -1,0 +1,24 @@
+﻿@model CVmvc.Models.Entity.TBL_ABILITY
+
+
+
+@{
+    ViewBag.Title = "NewAbility";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+
+<h2>New Ability Adding Paper</h2>
+<br />
+<h4> Experiance UPDATE PAGE</h4>
+<br />
+
+<form method="post">
+    @Html.Label("ABILITY EXPLANATION")
+    @Html.TextBoxFor(x => x.ABILITY, new { @class = "form-control" })
+    <br />
+    @Html.Label("RATE")
+    @Html.TextBoxFor(x => x.ORAN, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">SAVE</button>
+</form>

@@ -1,0 +1,32 @@
+﻿@model CVmvc.Models.Entity.TBL_EXPERIANCE
+
+
+@{
+    ViewBag.Title = "DeneyimGetir";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>DeneyimGetir</h2>
+<br />
+<h4> Experiance UPDATE PAGE</h4>
+<br />
+
+<form method="post">
+    @Html.Label("Deneyim ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Baslik")
+    @Html.TextBoxFor(x => x.HEAD, new { @class = "form-control" })
+    <br />
+    @Html.Label("altbaslik")
+    @Html.TextBoxFor(x => x.HEADBELOW, new { @class = "form-control" })
+    <br />
+    @Html.Label("tarih")
+    @Html.TextBoxFor(x => x.DATE, new { @class = "form-control" })
+    <br />
+    @Html.Label("aciklama")
+    @Html.TextAreaFor(x => x.EXPLANATION, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">UPDATE</button>
+
+</form>
