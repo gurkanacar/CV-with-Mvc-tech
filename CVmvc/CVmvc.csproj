@@ -2353,6 +2353,8 @@
     <Content Include="Views\Ability\YetenekDuzenle.cshtml" />
     <Content Include="Views\Egitim\Index.cshtml" />
     <Content Include="Views\Egitim\EgitimEkle.cshtml" />
+    <Content Include="Views\Egitim\EgitimDuzenle.cshtml" />
+    <Content Include="Views\Egitim\EgitimSil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

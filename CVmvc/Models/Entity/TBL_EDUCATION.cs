@@ -16,10 +16,12 @@ namespace CVmvc.Models.Entity
     public partial class TBL_EDUCATION
     {
         public int ID { get; set; }
-        [Required(ErrorMessage = "Bu Alani Bos Gecemezsiniz")]
+        [Required(ErrorMessage ="Bu Alani Bos Gecemezsiniz")]
         public string HEADING { get; set; }
         public string HEADINGBELOW { get; set; }
         public string HEADINGBELOW2 { get; set; }
+
+        [StringLength(10, ErrorMessage = "Lutfen En Fazla 10 Karakterlik Veri Girisi Yapiniz")]
         public string GNO { get; set; }
         public string DATE { get; set; }
     }

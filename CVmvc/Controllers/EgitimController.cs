@@ -27,10 +27,45 @@ namespace CVmvc.Controllers
         {
             if (!ModelState.IsValid) 
             {
-                return View("Egitim Ekle");
+                return View("EgitimEkle");
             }
-            repo.TAdd(p);
+            else
+            {
+
+                repo.TAdd(p);
+                return RedirectToAction("Index");
+            }
+        }
+
+        public ActionResult EgitimSil(int id)
+        {
+            var egitim = repo.Find(x => x.ID == id);
+            repo.TDelete(egitim);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult EgitimDuzenle(int id)
+        {
+            var egitim = repo.Find(x => x.ID == id);
+            repo.TUpdate(egitim);
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public ActionResult EgitimDuzenle(TBL_EDUCATION t)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("EgitimDuzenle");
+            }
+            var egitim = repo.Find(x => x.ID == t.ID);
+            egitim.HEADING = t.HEADING;
+            egitim.HEADINGBELOW = t.HEADINGBELOW;
+            egitim.HEADINGBELOW2 = t.HEADINGBELOW2;
+            egitim.DATE = t.DATE;
+            egitim.GNO = t.GNO;
+            repo.TUpdate(egitim);
+            return RedirectToAction("Index");
+        }
+
     }
 }

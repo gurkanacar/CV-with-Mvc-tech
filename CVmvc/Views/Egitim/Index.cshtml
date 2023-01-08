@@ -28,14 +28,23 @@
             <td>@item.HEADINGBELOW2</td>
             <td>@item.GNO</td>
             <td>@item.DATE</td>
-            <td><a href='/Egitim/EgitimGetir/@item.ID' class="btn btn-danger">Delete</a></td>
-            <td><a href='/Egitim/EgitimGetir/@item.ID/' class="btn btn-warning">Update</a></td>
+            <td>
+                <a class="btn btn-danger btn-sm" href="/Egitim/EgitimSil/@item.ID">
+                    <i class="fas fa-trash">
+                    </i>
+                    Sil
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/Egitim/EgitimDuzenle/@item.ID">
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Duzenle
+                </a>
+            </td>
         </tr>
     }
 </table>
 <a href="/Egitim/EgitimEkle/" class="btn btn-primary">Yeni Egitim Bilgisi  Ekle</a>
-
-
-
 
 
