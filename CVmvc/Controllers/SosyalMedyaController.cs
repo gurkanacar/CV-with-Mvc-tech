@@ -29,5 +29,29 @@ namespace CVmvc.Controllers
             repo.TAdd(p);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult SayfaGetir(int id)
+        {
+            var hesap = repo.Find(x => x.id == id);
+            return View(hesap);       
+        }
+        [HttpPost]
+        public ActionResult SayfaGetir(TblSosyalMedya p)
+        {
+            var hesap = repo.Find(x => x.id ==p.id);
+            hesap.Ad = p.Ad;
+            hesap.Durum =true;
+            hesap.Link = p.Link;
+            hesap.icon = p.icon;
+            repo.TUpdate(hesap);
+            return RedirectToAction("Index");
+        }
+        public ActionResult Sil(int id)
+        {
+            var hesap = repo.Find(x => x.id == id);
+            hesap.Durum = false;
+            repo.TUpdate(hesap);
+            return RedirectToAction("Index");
+        }
     }
 }

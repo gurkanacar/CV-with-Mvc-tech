@@ -19,7 +19,7 @@ namespace CVmvc.Controllers
 
         public PartialViewResult SosyalMedya()
         {
-            var sosyalmedya = db.TblSosyalMedyas.ToList();
+            var sosyalmedya = db.TblSosyalMedyas.Where(x =>x.Durum==true).ToList();
 
             return PartialView(sosyalmedya);
         }
@@ -59,7 +59,6 @@ namespace CVmvc.Controllers
         { 
             return PartialView();
         }
-
         [HttpPost]
         public PartialViewResult CONNECTION(TBL_CONNECT t)
         {
@@ -68,7 +67,5 @@ namespace CVmvc.Controllers
             db.SaveChanges();
             return PartialView();
         }
-
-
     }
 }

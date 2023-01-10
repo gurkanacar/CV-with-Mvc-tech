@@ -90,6 +90,7 @@
           <Property Name="Ad" Type="varchar" MaxLength="30" />
           <Property Name="Link" Type="varchar" MaxLength="50" />
           <Property Name="icon" Type="varchar" MaxLength="30" />
+          <Property Name="Durum" Type="bit" />
         </EntityType>
         <EntityContainer Name="DbCvModelStoreContainer">
           <EntitySet Name="TBL_ABILITY" EntityType="Self.TBL_ABILITY" Schema="dbo" store:Type="Tables" />
@@ -202,6 +203,7 @@
           <Property Name="Ad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Link" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="icon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Durum" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -297,6 +299,7 @@
           <EntitySetMapping Name="TblSosyalMedyas">
             <EntityTypeMapping TypeName="DbCvModel.TblSosyalMedya">
               <MappingFragment StoreEntitySet="TblSosyalMedya">
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
                 <ScalarProperty Name="icon" ColumnName="icon" />
                 <ScalarProperty Name="Link" ColumnName="Link" />
                 <ScalarProperty Name="Ad" ColumnName="Ad" />

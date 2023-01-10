@@ -12,6 +12,8 @@ namespace CVmvc.Controllers
     {
         // GET: Egitim
         GenericRepository<TBL_EDUCATION> repo = new GenericRepository<TBL_EDUCATION>();
+
+        [Authorize]
         public ActionResult Index()
         {
             var egitim = repo.List();
