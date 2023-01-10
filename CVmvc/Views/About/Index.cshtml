@@ -1,21 +1,41 @@
-﻿
+﻿@using CVmvc.Models.Entity;
+@model List<TBL_ABOUT>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_adminLayout.cshtml";
 }
 
-<h2>hakkimda menusu</h2>
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>AD</th>
-        <th>SEHIR</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>gurkan</td>
-        <td>sakarya</td>
-    </tr>
+<br />
+<h2>Hakkimda Duzenleme Sayfasi</h2>
+<br />
+<form method="post" name="TBL_ABOUT">
+    @foreach (var item in Model)
+    {
+        <label>YENI HAKKIMDA GIRINIZ</label>
+        <br />
+        <label>NAME</label>
+        <input type="text" name="NAME" value="@item.NAME" class="form-control" />
+        <br />
+        <label>SURNAME</label>
+        <input type="text" name="SURNAME" value="@item.SURNAME" class="form-control" />
+        <br />
+        <label>ADDRESS</label>
+        <input type="text" name="ADDRESS" value="@item.ADDRESS" class="form-control" />
+        <br />
+        <label>MAIL</label>
+        <input type="text" name="MAIL" value="@item.MAIL" class="form-control" />
+        <br />
+        <label>PHONE</label>
+        <input type="text" name="PHONE" value="@item.PHONE" class="form-control" />
+        <br />
+        <label>PHOTO</label>
+        <input type="text" name="PHOTO" value="@item.PHOTO" class="form-control" />
+        <br />
+        <label>EXPLANATION</label>
+        <textarea rows="5" class="form-control" name="EXPLANATION">@item.EXPLANATION</textarea>
+    }
+    <br />
+    <button class="btn btn-success">Guncelle</button>
 
-</table>
+</form>
 

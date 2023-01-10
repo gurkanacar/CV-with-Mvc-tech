@@ -16,5 +16,6 @@ namespace CVmvc.Models.Entity
     {
         public int ID { get; set; }
         public string EXPLANATION { get; set; }
+        public string Tarih { get; set; }
     }
 }

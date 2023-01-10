@@ -12,13 +12,11 @@ namespace CVmvc.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class TBL_EDUCATION
+    public partial class TblSosyalMedya
     {
-        public int ID { get; set; }
-        public string HEADING { get; set; }
-        public string HEADINGBELOW { get; set; }
-        public string HEADINGBELOW2 { get; set; }
-        public string GNO { get; set; }
-        public string DATE { get; set; }
+        public int id { get; set; }
+        public string Ad { get; set; }
+        public string Link { get; set; }
+        public string icon { get; set; }
     }
 }

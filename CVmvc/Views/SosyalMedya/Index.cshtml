@@ -1,0 +1,93 @@
+﻿@using CVmvc.Models.Entity;
+@model List<TblSosyalMedya>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Yetenek Listem</h3>
+                            </div>
+                            <div class="card-body">
+                                <button class="btn btn-info" data-toggle="modal" data-target="#Modal1">Yeni Sosyal Medya Hesabi Ekle</button>
+                                <br />
+                                <br />
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Sosyal Medya</th>
+                                            <th>Duzenle</th>
+                                            <th>Sil</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.id</td>
+                                                <td>@item.Ad</td>
+                                                <td>
+                                                    <a class="btn btn-info btn-sm" href="/SosyalMedya/Duzenle/@item.id">
+                                                        <i class="fas fa-pencil-alt">
+                                                        </i>
+                                                        Duzenle
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-danger btn-sm" href="/SosyalMedya/Sil/@item.id">
+                                                        <i class="fas fa-trash">
+                                                        </i>
+                                                        Sil
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal" id="Modal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Sosyal Medya Hesabi Ekleme</h2>
+                    </div>
+                    <form method="post" action="/SosyalMedya/Ekle">
+                        <div class="modal-body">
+                            <label>Sosyal Medya Ismi</label>
+                            <input type="text" name="Ad" class="form-control" />
+                            <br />
+                            <label>Sosyal Medya Linki</label>
+                            <input type="text" name="Link" class="form-control" />
+                            <br />
+                            <label>Icon Degeri</label>
+                            <input type="text" name="icon" class="form-control" />
+                            <br />
+                            <button class="btn btn-info">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

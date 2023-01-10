@@ -33,5 +33,6 @@ namespace CVmvc.Models.Entity
         public virtual DbSet<TBL_EXPERIANCE> TBL_EXPERIANCE { get; set; }
         public virtual DbSet<TBL_HOBILERIM> TBL_HOBILERIM { get; set; }
         public virtual DbSet<TBL_SERTIFIKA> TBL_SERTIFIKA { get; set; }
+        public virtual DbSet<TblSosyalMedya> TblSosyalMedyas { get; set; }
     }
 }

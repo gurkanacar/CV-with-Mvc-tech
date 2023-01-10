@@ -1,0 +1,61 @@
+﻿@using CVmvc.Models.Entity;
+@model List<TBL_SERTIFIKA>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header p-2">
+                        </div><!-- /.card-header -->
+                        <div class="card-body">
+                            <!-- /.tab-pane -->
+                            <div class="tab-pane" id="timeline">
+                                <!-- The timeline -->
+                                <div class="timeline timeline-inverse">
+                                    <!-- timeline time label -->
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="time-label">
+                                            <a href="/Sertifika/SertifikaGetir/@item.ID" class="btn btn-success">
+                                                <span class="bg-success">
+                                                    @item.Tarih
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <!-- /.timeline-label -->
+                                        <!-- timeline item -->
+                                        <div>
+                                            <div class="timeline-item">
+                                                <div class="timeline-body">
+                                                    @item.EXPLANATION
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                                <a href="/Sertifika/YeniSertifika" class="btn btn-info">Yeni Sertifika Girisi</a>
+                            </div>
+                        </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+</body>
+</html>
+
+

@@ -1,0 +1,20 @@
+﻿@model  CVmvc.Models.Entity.TBL_SERTIFIKA
+@{
+    ViewBag.Title = "SertifikaGetir";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>New Certifica Update Paper</h2>
+<br />
+
+<form method="post">
+    @Html.Label("Sertifika Aciklamasi")
+    @Html.TextBoxFor(x => x.EXPLANATION, new { @class = "form-control" })
+    <br />
+    @Html.Label("DATE")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Update</button>
+    <a href="/Sertifika/SertifikaSil/@ViewBag.d" class="btn btn-danger">Sil</a>
+</form>
+

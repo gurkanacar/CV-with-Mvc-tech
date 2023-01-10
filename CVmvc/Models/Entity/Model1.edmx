@@ -79,7 +79,17 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tarih" Type="varchar" MaxLength="30" />
           <Property Name="EXPLANATION" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TblSosyalMedya">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="varchar" MaxLength="30" />
+          <Property Name="Link" Type="varchar" MaxLength="50" />
+          <Property Name="icon" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityContainer Name="DbCvModelStoreContainer">
           <EntitySet Name="TBL_ABILITY" EntityType="Self.TBL_ABILITY" Schema="dbo" store:Type="Tables" />
@@ -90,6 +100,7 @@
           <EntitySet Name="TBL_EXPERIANCE" EntityType="Self.TBL_EXPERIANCE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_HOBILERIM" EntityType="Self.TBL_HOBILERIM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_SERTIFIKA" EntityType="Self.TBL_SERTIFIKA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSosyalMedya" EntityType="Self.TblSosyalMedya" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -170,6 +181,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EXPLANATION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="DbCvEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TBL_ABILITY" EntityType="Self.TBL_ABILITY" />
@@ -180,7 +192,17 @@
           <EntitySet Name="TBL_EXPERIANCE" EntityType="Self.TBL_EXPERIANCE" />
           <EntitySet Name="TBL_HOBILERIM" EntityType="Self.TBL_HOBILERIM" />
           <EntitySet Name="TBL_SERTIFIKA" EntityType="Self.TBL_SERTIFIKA" />
+          <EntitySet Name="TblSosyalMedyas" EntityType="DbCvModel.TblSosyalMedya" />
         </EntityContainer>
+        <EntityType Name="TblSosyalMedya">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Link" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="icon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -266,8 +288,19 @@
           <EntitySetMapping Name="TBL_SERTIFIKA">
             <EntityTypeMapping TypeName="DbCvModel.TBL_SERTIFIKA">
               <MappingFragment StoreEntitySet="TBL_SERTIFIKA">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="EXPLANATION" ColumnName="EXPLANATION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSosyalMedyas">
+            <EntityTypeMapping TypeName="DbCvModel.TblSosyalMedya">
+              <MappingFragment StoreEntitySet="TblSosyalMedya">
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -135,7 +135,11 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EgitimController.cs" />
     <Compile Include="Controllers\ExperianceController.cs" />
+    <Compile Include="Controllers\HobiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\iletisimController.cs" />
+    <Compile Include="Controllers\SertifikaController.cs" />
+    <Compile Include="Controllers\SosyalMedyaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -153,6 +157,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\TblSosyalMedya.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\TBL_ABILITY.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -2355,6 +2362,13 @@
     <Content Include="Views\Egitim\EgitimEkle.cshtml" />
     <Content Include="Views\Egitim\EgitimDuzenle.cshtml" />
     <Content Include="Views\Egitim\EgitimSil.cshtml" />
+    <Content Include="Views\Sertifika\Index.cshtml" />
+    <Content Include="Views\Sertifika\SertifikaGetir.cshtml" />
+    <Content Include="Views\Sertifika\YeniSertifika.cshtml" />
+    <Content Include="Views\iletisim\Index.cshtml" />
+    <Content Include="Views\Hobi\Index.cshtml" />
+    <Content Include="Views\Default\SosyalMedya.cshtml" />
+    <Content Include="Views\SosyalMedya\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

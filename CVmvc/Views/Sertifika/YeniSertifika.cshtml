@@ -1,0 +1,21 @@
+﻿@model  CVmvc.Models.Entity.TBL_SERTIFIKA
+
+@{
+    ViewBag.Title = "YeniSertifika";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>New Certifica Adding Paper</h2>
+<br />
+
+<form method="post">
+    @Html.Label("Sertifika Aciklamsi")
+    @Html.TextBoxFor(x => x.EXPLANATION, new { @class = "form-control" })
+    <br />
+    @Html.Label("DATE")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Save</button>
+
+</form>
+

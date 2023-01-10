@@ -17,6 +17,13 @@ namespace CVmvc.Controllers
             return View(degerler);
         }
 
+        public PartialViewResult SosyalMedya()
+        {
+            var sosyalmedya = db.TblSosyalMedyas.ToList();
+
+            return PartialView(sosyalmedya);
+        }
+
         public PartialViewResult Deneyim()
         {
             var deneyim1 = db.TBL_EXPERIANCE.ToList();
